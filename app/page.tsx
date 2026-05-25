@@ -1,15 +1,16 @@
 "use client";
 import { atom, useAtom } from "jotai";
-
-export const counterAtom = atom(0);
+import Counter from "@/components/Counter";
+import { counterAtom } from "./atoms";
+import DoubleCounter from "@/components/DoubleCounter";
 
 export default function Home() {
   const [count, setCount] = useAtom(counterAtom);
   return (
     <>
       <h1>{count}</h1>
-      <button onClick={() => setCount((prev) => prev + 1)}>Increment</button>
-      <button onClick={() => setCount((prev) => prev - 1)}>Decrement</button>
+      <Counter />
+      <DoubleCounter />
     </>
   );
 }
